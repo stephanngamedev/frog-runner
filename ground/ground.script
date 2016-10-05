@@ -1,0 +1,19 @@
+local grounds = { 'ground0', 'ground1', 'ground2', 'ground3', 'ground4', 'ground5', 'ground6' }
+
+function init( self )
+	self.speed = 6
+end
+
+function update( self, delta_time )
+	for i = 1, #grounds do
+		local ground_position = go.get_position( grounds[i] )
+		
+		if ground_position.x  <= -228 then
+			ground_position.x = 1368 + ( ground_position.x + 228 )
+		end
+		
+		ground_position.x = ground_position.x - self.speed
+		
+		go.set_position( ground_position, grounds[i] )
+	end
+end
