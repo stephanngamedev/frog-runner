@@ -17,3 +17,9 @@ function update( self, delta_time )
 		go.set_position( ground_position, grounds[i] )
 	end
 end
+
+function on_message( self, message_id, message, sender )
+	if message == hash('set_speed') then
+		self.speed = message.speed
+	end
+end
