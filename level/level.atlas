@@ -4,6 +4,9 @@ images {
 images {
   image: "/main/images/ground02.png"
 }
+images {
+  image: "/platform/images/rock_planks.png"
+}
 margin: 0
 extrude_borders: 0
 inner_padding: 0

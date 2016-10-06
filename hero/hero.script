@@ -63,7 +63,7 @@ end
 
 local function jump( self )
 	if self.ground_contact then
-		self.velocity.y = jump_takoff_speed
+		self.velocity.y = jump_takeoff_speed
 	end
 end
 

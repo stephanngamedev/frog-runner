@@ -1,0 +1,22 @@
+function init( self )
+	self.speed = 9
+end
+
+function update( self, delta_time )
+	local position = go.get_position()
+	
+	if position.x < -500 then
+		go.delete()
+	end
+	
+	position.x = position.x - self.speed
+	
+	go.set_position( position )
+end
+
+function on_message( self, message_id, message, sender )
+	if message_id == hash('set_speed') then
+		self.speed = message.speed
+	end
+end
+
